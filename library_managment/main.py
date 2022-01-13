@@ -1,9 +1,8 @@
 from library_managment.AddBook import *
-from DeleteBook import *
-from ViewBooks import *
-from IssueBook import *
-from ReturnBook import *
-
+from library_managment.ViewBooks import *
+from library_managment.IssueBook import *
+from library_managment.ReturnBook import *
+from library_managment.DeleteBook import *
 conn = sqlite3.connect('library.db')
 cur = conn.cursor()
 
