@@ -1,1 +1,1 @@
-# library_managment
+Library Manangement system - Data library application
