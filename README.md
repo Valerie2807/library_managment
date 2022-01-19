@@ -6,3 +6,5 @@ Application requirements:
 Programming language is python. 
 A database can be any of  SQL based database. (Ex. Sqlite3 (database). 
 For Graphical user interface(GUI) can be used packages like Tkinter and Pillow for supporting and manipulating images.
+Test cases : https://docs.google.com/spreadsheets/d/1LU97CXCVvJbzNFYKsq6_k1KBa-AmeFEWsRXBeR_63gw/edit?usp=sharing
+Requirments Readers Hub: https://docs.google.com/document/d/1P_YCB6PiT6E9ZvyglXNo-bw5LGQn6uJDmRAxhIVAt-w/edit?usp=sharing
