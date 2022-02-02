@@ -1,5 +1,5 @@
 ![GitHub](https://img.shields.io/github/license/Valerie2807/library_managment)
-https://img.shields.io/badge/coverage-100%25-green
+![GitHub](https://img.shields.io/badge/coverage-100%25-green)
 
 Library Manangement system - Readers Hub application
 
