@@ -18,6 +18,7 @@ Readers Hub is an application which keeps the record of the books in the library
 
 Requirments for Readers Hub: https://docs.google.com/document/d/1P_YCB6PiT6E9ZvyglXNo-bw5LGQn6uJDmRAxhIVAt-w/edit?usp=sharing
 
+
 Final documentation:https://docs.google.com/document/d/1pFxpT1AVlEB7pnqJdUd1q3NX-yc5qg96JD_OcVNizFk/edit?usp=sharing
 Programming language is python. 
 Database Sqlite3. 
