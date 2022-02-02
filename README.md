@@ -1,8 +1,14 @@
 ![GitHub](https://img.shields.io/github/license/Valerie2807/library_managment)
 ![GitHub](https://img.shields.io/badge/coverage-100%25-green)
 ![GitHub](https://img.shields.io/badge/docs-passing-green)
-![GitHub](https://img.shields.io/badge/release-4.0.0-green)
+![GitHub](https://img.shields.io/badge/release-v.4.0.0-green)
 ![GitHub](https://img.shields.io/badge/python-3.8-blue)
+![GitHub](https://img.shields.io/badge/matplotlib-3.5.1-blue)
+![GitHub](https://img.shields.io/badge/pillow-9.0.0-blue)
+![GitHub](https://img.shields.io/badge/sphinx-4.4.0-blue)
+![GitHub](https://img.shields.io/badge/tkinter-2.7.0-blue)
+![GitHub](https://img.shields.io/badge/windows-success-green)
+![GitHub](https://img.shields.io/badge/macOs-success-green)
 
 Library Manangement system - Readers Hub application
 
