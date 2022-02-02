@@ -17,7 +17,8 @@
 Readers Hub is an application which keeps the record of the books in the library. Software team is required to build the software which makes the work easier for the librarian. It will help to track which book is issued and which book is available. 
 
 Requirments for Readers Hub: https://docs.google.com/document/d/1P_YCB6PiT6E9ZvyglXNo-bw5LGQn6uJDmRAxhIVAt-w/edit?usp=sharing
-Final documentation: https://docs.google.com/document/d/1pFxpT1AVlEB7pnqJdUd1q3NX-yc5qg96JD_OcVNizFk/edit
+
+Final documentation:https://docs.google.com/document/d/1pFxpT1AVlEB7pnqJdUd1q3NX-yc5qg96JD_OcVNizFk/edit?usp=sharing
 Programming language is python. 
 Database Sqlite3. 
 For GUI used Tkinter and Pillow for supporting and manipulating images.
