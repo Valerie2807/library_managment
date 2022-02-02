@@ -1,0 +1,4 @@
+matplotlib==3.5.1
+Pillow==9.0.0
+sphinx==4.4.0
+sphinx_rtd_theme==1.0.0
