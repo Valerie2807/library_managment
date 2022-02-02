@@ -11,7 +11,8 @@
 ![GitHub](https://img.shields.io/badge/macOs-success-green)
 ![GitHub](https://img.shields.io/badge/sqlite3-3.37.2-blue)
 
-Library Manangement system - Readers Hub application
+# Library Manangement system - Readers Hub application
+*Author:
 
 Readers Hub is an application which keeps the record of the books in the library. Software team is required to build the software which makes the work easier for the librarian. It will help to track which book is issued and which book is available. 
 
@@ -23,4 +24,12 @@ For Graphical user interface(GUI) can be used packages like Tkinter and Pillow f
 Test cases : https://docs.google.com/spreadsheets/d/1LU97CXCVvJbzNFYKsq6_k1KBa-AmeFEWsRXBeR_63gw/edit?usp=sharing
 
 Requirments Readers Hub: https://docs.google.com/document/d/1P_YCB6PiT6E9ZvyglXNo-bw5LGQn6uJDmRAxhIVAt-w/edit?usp=sharing
+# Instructions (Start Here)
 
+## Step 0: Install Git
+Download git [here](https://git-scm.com/downloads). Follow the walkthrough, all default options should be good. Don't touch them unless you know what you're doing.
+## Step 1: Clone the Repository
+```
+git clone https://github.com/Valerie2807/library_managment.git
+```
+We already have code up on GitHub so the first step is to "clone" a copy of what we have on your local machine. To begin, open up a terminal (on windows use Git Bash or WSL to follow the commands used in this tutorial) and navigate to where you'd like your project to be located. If you have a "projects" folder, this would be the place. This command will navigate you to your home directory
