@@ -34,3 +34,22 @@ Download git [here](https://git-scm.com/downloads). Follow the walkthrough, all 
 git clone https://github.com/Valerie2807/library_managment.git
 ```
 We already have code up on GitHub so the first step is to "clone" a copy of what we have on your local machine. To begin, open up a terminal (on windows use Git Bash or WSL to follow the commands used in this tutorial) and navigate to where you'd like your project to be located. If you have a "projects" folder, this would be the place. This command will navigate you to your home directory
+##  File system:
+Verify that you are in the directory that contains the file `main.py` in Readers Hub(`library_managment`) directory.
+Readers Hub
+├── library_managment
+│    ├── library_managment
+│       ├── __init__.py
+│       ├── AddBook.py
+        ├── DeleteBook.py
+        ├── IssueBook.py
+        ├── SearchforBooks.py
+        ├── ViewBooks.py
+        ├── lib.jpg
+│       ├──library.db
+│       ├──main.py
+│       ├──requirements.txt
+│       └── statscomb.py
+│
+├── README.md
+└── LICENSE
