@@ -9,6 +9,7 @@
 ![GitHub](https://img.shields.io/badge/tkinter-2.7.0-blue)
 ![GitHub](https://img.shields.io/badge/windows-success-green)
 ![GitHub](https://img.shields.io/badge/macOs-success-green)
+![GitHub](https://img.shields.io/badge/sqlite3-3.37.2-blue)
 
 Library Manangement system - Readers Hub application
 
