@@ -1,26 +1,39 @@
+# -----------------------------------------------------------------------------------
+# IssueBook function
+# DATABASE   : library
+# TABLES     : BOOKS, BOOKS_ISSUED
+# DESCRIPTION: Module which issue books to students if books are available
+#             Copyright Group 3 2022. All rights reserved.
+#
+# AUTHORS    : Nazneen
+#
+# REF NO     DATE
+# Group 3    12/01/2022
+# -----------------------------------------------------------------------------------
+
+# import libraries
 from tkinter import *
-from PIL import ImageTk,Image
+from PIL import ImageTk, Image
 from tkinter import messagebox
 import sqlite3
 
-# Add your own database name and password here to reflect in the code
-#mypass = "root"
-#mydatabase="db"
-
-con = sqlite3.connect('library.db')
-cur = con.cursor()
+con = sqlite3.connect('library.db')  # connect to library database
+cur = con.cursor()  # define cursor
 
 # Enter Table Names here
-issueTable = "books_issued" 
-bookTable = "books"
-    
-#List To store all Book IDs
-allBid = [] 
+issueTable = "books_issued"  # Books_issued Table
+bookTable = "books"  # Book Table
 
+# List To store all Book IDs
+allBid = []
+
+
+# Issue books to student
 def issue():
-    
-    global issueBtn,labelFrame,lb1,inf1,inf2,inf3,quitBtn,root,Canvas1,status
-    
+    # define global variables
+    global issueBtn, labelFrame, lb1, inf1, inf2, inf3, quitBtn, root, Canvas1, status
+
+    # Enter book id,student id,issued date
     bid = inf1.get()
     issueto = inf2.get()
     Issued_date = inf3.get()
@@ -31,92 +44,95 @@ def issue():
     inf1.destroy()
     inf2.destroy()
     inf3.destroy()
-    
-    
-    extractBid = "select bid from "+bookTable
+
+    # select book id from books table
+    extractBid = "select bid from " + bookTable
     try:
         cur.execute(extractBid)
         con.commit()
         for i in cur:
             allBid.append(i[0])
-        
+
+        # checking for book id in books table
         if bid in allBid:
-            checkAvail = "select status from "+bookTable+" where bid = '"+bid+"'"
+
+            checkAvail = "select status from " + bookTable + " where bid = '" + bid + "'"
             cur.execute(checkAvail)
             con.commit()
             for i in cur:
                 check = i[0]
-                
+
             if check == 'avail':
                 status = True
             else:
                 status = False
 
         else:
-            messagebox.showinfo("Error","Book ID not present")
+            messagebox.showinfo("Error", "Book ID not present")
     except:
-        messagebox.showinfo("Error","Can't fetch Book IDs")
-    
-    issueSql = "insert into "+issueTable+" values ('"+bid+"','"+issueto+"', '"+Issued_date+"')"
-    show = "select * from "+issueTable
-    
-    updateStatus = "update "+bookTable+" set status = 'issued' where bid = '"+bid+"'"
+        messagebox.showinfo("Error", "Can't fetch Book IDs")
+
+    # insert values into books_issued table if a particular book is issued
+    issueSql = "insert into " + issueTable + " values ('" + bid + "','" + issueto + "', '" + Issued_date + "')"
+    # show = "select * from "+issueTable
+
+    # Update the status in Books table as issued
+    updateStatus = "update " + bookTable + " set status = 'issued' where bid = '" + bid + "'"
     try:
         if bid in allBid and status == True:
             cur.execute(issueSql)
             con.commit()
             cur.execute(updateStatus)
             con.commit()
-            messagebox.showinfo('Success',"Book Issued Successfully")
+            messagebox.showinfo('Success', "Book Issued Successfully")
             root.destroy()
         else:
             allBid.clear()
-            messagebox.showinfo('Message',"Book Already Issued")
+            messagebox.showinfo('Message', "Book Already Issued")
             root.destroy()
             return
     except:
-        messagebox.showinfo("Search Error","The value entered is wrong, Try again")
-    
-    #print(bid)
-    #print(issueto)
-    
+        messagebox.showinfo("Search Error", "The value entered is wrong, Try again")
+
     allBid.clear()
-    
-def issueBook(): 
-    
-    global issueBtn,labelFrame,lb1,inf1,inf2,inf3,quitBtn,root,Canvas1,status
-    
+
+
+# Issue book window
+def issueBook():
+    # define global variables
+    global issueBtn, labelFrame, lb1, inf1, inf2, inf3, quitBtn, root, Canvas1, status
+
     root = Tk()
     root.title("Library")
-    root.minsize(width=400,height=400)
+    root.minsize(width=400, height=400)
     root.geometry("600x500")
-    
+
     Canvas1 = Canvas(root)
     Canvas1.config(bg="#D6ED17")
-    Canvas1.pack(expand=True,fill=BOTH)
+    Canvas1.pack(expand=True, fill=BOTH)
 
-    headingFrame1 = Frame(root,bg="#FFBB00",bd=5)
-    headingFrame1.place(relx=0.25,rely=0.1,relwidth=0.5,relheight=0.13)
-        
-    headingLabel = Label(headingFrame1, text="Issue Book", bg='black', fg='white', font=('Courier',15))
-    headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
-    
-    labelFrame = Frame(root,bg='black')
-    labelFrame.place(relx=0.1,rely=0.3,relwidth=0.8,relheight=0.5)  
-        
+    headingFrame1 = Frame(root, bg="#FFBB00", bd=5)
+    headingFrame1.place(relx=0.25, rely=0.1, relwidth=0.5, relheight=0.13)
+
+    headingLabel = Label(headingFrame1, text="Issue Book", bg='black', fg='white', font=('Courier', 15))
+    headingLabel.place(relx=0, rely=0, relwidth=1, relheight=1)
+
+    labelFrame = Frame(root, bg='black')
+    labelFrame.place(relx=0.1, rely=0.3, relwidth=0.8, relheight=0.5)
+
     # Book ID
-    lb1 = Label(labelFrame,text="Book ID : ", bg='black', fg='white')
-    lb1.place(relx=0.05,rely=0.2)
-        
+    lb1 = Label(labelFrame, text="Book ID : ", bg='black', fg='white')
+    lb1.place(relx=0.05, rely=0.2)
+
     inf1 = Entry(labelFrame)
-    inf1.place(relx=0.3,rely=0.2, relwidth=0.62)
-    
+    inf1.place(relx=0.3, rely=0.2, relwidth=0.62)
+
     # Issued To Student name 
-    lb2 = Label(labelFrame,text="Issued To : ", bg='black', fg='white')
-    lb2.place(relx=0.05,rely=0.4)
-        
+    lb2 = Label(labelFrame, text="Issued To : ", bg='black', fg='white')
+    lb2.place(relx=0.05, rely=0.4)
+
     inf2 = Entry(labelFrame)
-    inf2.place(relx=0.3,rely=0.4, relwidth=0.62)
+    inf2.place(relx=0.3, rely=0.4, relwidth=0.62)
 
     # Issued Date
     lb3 = Label(labelFrame, text="Issued Date: ", bg='black', fg='white')
@@ -124,13 +140,13 @@ def issueBook():
 
     inf3 = Entry(labelFrame)
     inf3.place(relx=0.3, rely=0.6, relwidth=0.62)
-    
-    
-    #Issue Button
-    issueBtn = Button(root,text="Issue",bg='#d1ccc0', fg='black',command=issue)
-    issueBtn.place(relx=0.28,rely=0.9, relwidth=0.18,relheight=0.08)
-    
-    quitBtn = Button(root,text="Quit",bg='#aaa69d', fg='black', command=root.destroy)
-    quitBtn.place(relx=0.53,rely=0.9, relwidth=0.18,relheight=0.08)
-    
+
+    # Issue Button
+    issueBtn = Button(root, text="Issue", bg='#d1ccc0', fg='black', command=issue)
+    issueBtn.place(relx=0.28, rely=0.9, relwidth=0.18, relheight=0.08)
+
+    # Quit Button
+    quitBtn = Button(root, text="Quit", bg='#aaa69d', fg='black', command=root.destroy)
+    quitBtn.place(relx=0.53, rely=0.9, relwidth=0.18, relheight=0.08)
+
     root.mainloop()
